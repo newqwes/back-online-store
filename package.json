@@ -4,8 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
-    "web": "babel-node src/index.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "yarn clean && yarn build-babel",
+    "start": "yarn build && node ./build/index.js",
     "migrate": "yarn sequelize-cli db:seed:undo:all && yarn sequelize-cli db:migrate:undo:all && yarn sequelize-cli db:migrate && yarn sequelize-cli db:seed:all"
   },
   "keywords": [],
@@ -28,6 +30,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
+    "babel-preset-env": "^1.7.0",
     "bcryptjs": "^2.4.3",
     "bookshelf": "^1.2.0",
     "cors": "^2.8.5",
