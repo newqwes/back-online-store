@@ -14,11 +14,11 @@ module.exports = {
   },
   production: {
     dialect: 'postgres',
-    username: 'postgres',
-    password: 'root',
-    database: 'store_db',
-    host: process.env.DATABASE_URL,
-    port: '5432',
+    username: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
+    host: process.env.PGHOST,
+    port: process.env.PORT_DATABASE,
     omitNull: true,
   },
 };
