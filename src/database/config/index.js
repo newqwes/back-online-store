@@ -20,6 +20,7 @@ module.exports = {
     host: 'localhost',
     port: '5432',
     omitNull: true,
+    ssl: true,
     use_env_variable: 'DATABASE_URL',
   },
 };
