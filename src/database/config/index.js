@@ -20,5 +20,6 @@ module.exports = {
     host: process.env.PGHOST,
     port: process.env.PORT_DATABASE,
     omitNull: true,
+    use_env_variable: 'DATABASE_URL',
   },
 };
