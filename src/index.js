@@ -28,6 +28,7 @@ app.use('/api/auth', authRoute);
 app.use('/api/products', productsRoute);
 app.use('/api/order', orderRoute);
 app.use('/api/user', userRoute);
+app.use('/', (req, res) => res.send('hi!'));
 
 const port = process.env.SERVER_PORT;
 
