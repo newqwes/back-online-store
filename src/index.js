@@ -28,7 +28,10 @@ app.use('/api/auth', authRoute);
 app.use('/api/products', productsRoute);
 app.use('/api/order', orderRoute);
 app.use('/api/user', userRoute);
-app.use('/', (req, res) => res.send('hi!'));
+
+app.get('/', (request, response) => {
+  response.send('Hello from Express!');
+});
 
 const port = process.env.SERVER_PORT;
 
@@ -36,6 +39,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(port, async () => {
   console.log(`Server is listening on port ${port}...`);
-  await sequelize.authenticate();
+  // await sequelize.authenticate();
   console.log('Database Connected!');
 });
