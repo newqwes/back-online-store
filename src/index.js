@@ -33,7 +33,7 @@ app.get('/', (request, response) => {
   response.send('Hello from Express!');
 });
 
-const port = process.env.SERVER_PORT || 5000;
+const port = process.env.PORT || 3005;
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
