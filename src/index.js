@@ -29,10 +29,6 @@ app.use('/api/products', productsRoute);
 app.use('/api/order', orderRoute);
 app.use('/api/user', userRoute);
 
-app.get('/', (request, response) => {
-  response.send('Hello from Express!');
-});
-
 const port = process.env.PORT;
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));

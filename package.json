@@ -1,19 +1,23 @@
 {
   "name": "online-store",
   "version": "1.0.0",
-  "description": "Nazar",
+  "description": "",
   "main": "src/index.js",
   "scripts": {
-    "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel -d ./build ./src -s",
-    "build": "yarn clean && yarn build-babel",
-    "start": "yarn build && node ./build/index.js",
-    "migrate": "yarn sequelize-cli db:seed:undo:all && yarn sequelize-cli db:migrate:undo:all && yarn sequelize-cli db:migrate && yarn sequelize-cli db:seed:all"
+    "start": "nodemon --exec babel-node src/index.js",
+    "migrate": "yarn sequelize-cli db:migrate && yarn sequelize-cli db:seed:all",
+    "re-migrate": "yarn sequelize-cli db:seed:undo:all && yarn sequelize-cli db:migrate:undo:all && yarn sequelize-cli db:migrate && yarn sequelize-cli db:seed:all"
   },
   "keywords": [],
   "author": "Nazar Ashyrov <nazar.ashyrov@instinctools.com>",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.14.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
@@ -24,13 +28,6 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
-    "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.12.9",
-    "@babel/node": "^7.12.6",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/preset-env": "^7.12.7",
-    "babel-eslint": "^10.1.0",
-    "babel-preset-env": "^1.7.0",
     "bcryptjs": "^2.4.3",
     "bookshelf": "^1.2.0",
     "cors": "^2.8.5",

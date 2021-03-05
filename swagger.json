@@ -6,7 +6,7 @@
     "description": "My Online Store API. \n There are 3 roles admin, user and guest. \n Token contains user id."
   },
   "schemes": ["http"],
-  "host": "still-taiga-60706.herokuapp.com",
+  "host": "localhost:3005",
   "basePath": "/api/",
   "consumes": ["application/json"],
   "produces": ["application/json"],

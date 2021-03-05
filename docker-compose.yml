@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  server:
+    build: .
+    restart: always
+    ports:
+      - '3005:3005'
+    environment:
+      POSTGRES_USER: 'docker'
+      POSTGRES_PASSWORD: '123456'
+      POSTGRES_DB: 'docker'
+      POSTGRES_HOST: 'db'
+      ACCESS_TOKEN_SECRET: 'swsh23hjddnns'
+      SUPER_ADMIN: '666'
+      MAIL_SERVICE: 'Mail.ru'
+      MAIL_ADMIN: 'pizzastore@mail.ru'
+      MAIL_PASS: 'New1993426945'
+      GUEST_ROLE: 'guest'
+      USER_ROLE: 'user'
+      ADMIN_ROLE: 'admin'
+
+  db:
+    image: 'postgres'
+    restart: always
+    environment:
+      POSTGRES_USER: 'docker'
+      POSTGRES_PASSWORD: '123456'
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data:
